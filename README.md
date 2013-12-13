@@ -1,6 +1,5 @@
 
 
-
 Download the .zip file through the download button above, or grab a copy of it off github.com.
 
 Extract the .zip. You'll find the full example files that generate this webpage in there.
@@ -13,7 +12,7 @@ Place the .css files in your css folder and link them up in the "head" section o
 
 It's usually a good idea to add these links after you've already linked your main stylesheet. Lightbox can get buggy if you accidentally override one of its styles with one of your own.
 
-Next, you'll want to link the .js files at the bottom of your HTML page, before your own main.js or whatever file. After your footer and before the closing </body> tag, add these lines:
+Next, you'll want to link the .js files at the bottom of your HTML page, before your own main.js or whatever file. After your footer and before the closing "body" tag, add these lines:
 
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/lightbox-2.6.min.js"></script>
