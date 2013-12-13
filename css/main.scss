@@ -11,6 +11,18 @@ Il███████████████████].   /▌
 
 "Good UI design is humble.” – Jono DiCarlo
 */
+/*----SASS Color Palette----*/
+
+$white: #fefefe;
+$dark-grey: #252525;
+
+$red: #F14C4A;
+$orange: #FDAA02;
+$green: #20AE4A;
+$dark-green: #13672c;
+$blue: #0785BF;
+$purple: #A785C1;
+
 
 /*--------------------------------------Start CSS Reset---------------------------------------------*/
 
@@ -55,28 +67,37 @@ list-style: none;
 
 	
 body{
-background: #fafafa;
-color: #6e6e6e;
-font: 62.5% "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+background: url(../images/page/concrete_wall.png) #fafafa;
+background-attachment: fixed;
+color: $white;
+font: 62.5% Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
+h1, h2, h3, h4, p, ul, li{
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3{
+	font-family: 'Pacifico', cursive;
 }
 
 h1{
-font-size: 6.9em;
+font-size: 6em;
 line-height: 1.1em;
 }
 
 h2{
-font-size: 2.6em;
+font-size: 3.6em;
 line-height: 1.14em;
 }
 
 h3{
-font-size: 1.6em;
+font-size: 2.7em;
 line-height: 1.8em;
 }
 
 p, ul, dl{
-font-size: 1.4em;
+font-size: 1.8em;
 line-height: 1.6;
 margin-bottom: 20px;
 }
@@ -87,36 +108,127 @@ line-height: 1.3em;
 
 a{
 text-decoration: none;
-color: #08298A;
+color: $blue;
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-    color: $border-gray;
+a:hover{
+	opacity: .6;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: $border-gray;
+
+img{
+	max-width: 100%;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: $border-gray;
+
+.small{
+	font-size: .4em;
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: $border-gray;
+
+.center{
+	text-align: center;
+}
+
+.red{
+	color: $red;
+}
+
+.orange{
+	color: $orange;
+}
+
+.green{
+	color: $green;
+}
+
+.blue{
+	color: $blue;
+}
+
+.purple{
+	color: $purple;
 }
 
 /*--------------------------------------End General / Start Main------------------------------------*/
 
-/* #Media Queries
-================================================== */
-/*
-Grabbed from Chris Coyer.
-http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
-*/
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
+
+.fork-me{
+	position: absolute;
+	top: 0;
+	right: 0;
 }
+
+.landing{
+	h1{
+		text-align: center;
+		margin-top: 230px;
+		text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+	}
+
+	p{
+		font-size: 2.4em;
+		max-width: 570px;
+		margin: 36px auto 0;
+	}
+	height: 600px;
+}
+
+.button{
+	display: block;
+	width: 175px;
+	height: 40px;
+	color: $white;
+	background: $green;
+	font-size: 1.8em;
+	line-height: 40px;
+	text-align: center;
+	margin: 36px auto 0;
+	border: 1px solid $dark-green;
+	border-radius: 2px;
+}
+
+.scroll{
+	display: block;
+	width: 60px;
+	margin: 0 auto;
+}
+
+.page{
+	background: $white;
+	min-height: 600px;
+}
+
+.showcase{
+	background: $dark-grey;
+
+	-webkit-box-shadow: 1px -5px 5px 0px rgba(37,37,37,0.57);
+	   -moz-box-shadow: 1px -5px 5px 0px rgba(37,37,37,0.57);
+			box-shadow: 1px -5px 5px 0px rgba(37,37,37,0.57);
+
+	h2{
+		text-align: center;
+		padding: 36px 0;
+	}
+}
+
+.instructions{
+	background: $white;
+
+	h2{
+		color: $dark-grey;
+		text-align: center;
+		padding: 36px 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Smartphones (landscape) ----------- */
 @media only screen 

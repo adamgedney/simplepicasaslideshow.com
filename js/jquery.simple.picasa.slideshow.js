@@ -1,18 +1,35 @@
 (function($){
 
 
+//This is a simple JQuery plugin that utilizes lightbox.js. 
+//The Simple Picasa Slideshow allows you to add dynamic content to web projects.
+//It's perfect for giving your clients a Google based solution to updating
+//a static website's photo slideshow.
+//O had a need for such a solution and could find nothing out there.
+//I threw this together and thought I'd share :)
+//You're free to use it, alter it, or do whatever with the code.
+//
+//visit http://simplepicasaslideshow.com or http://adamgedney.com/simplepicasaslideshow
+//for instructions on how to use this ridiculously easy plugin on your own site.
 
 
 
 
-//------------------------------------------Picasa album slideshow----------------------------------
 
-var username = 'lizadivacatana';//gmail address less the @gmail.com
-var album = 'WebsiteAlbum';//make sure album is set to public throught the "share with" options
-var protocol = document.location.protocol == 'http:' ? 'http:' : 'https:';
-var url = protocol + '//picasaweb.google.com/data/feed/api/user/' + username + '/album/' + album + '?kind=photo&alt=json';
+//You won't need to change anything in here to make the plugin work.
+//If you know what you're doing though, have a ball!
+$.fn.picasa_slideshow = function(options){
+	opts = $.extend({}, $.fn.picasa_slideshow.defaults, options);
+
+	var username = opts.username;//gmail address less the @gmail.com
+	var album = opts.album;//make sure album is set to public through the "share with" options
+	var speed = opts.speed * 1;//casts as int
+	var protocol = document.location.protocol == 'http:' ? 'http:' : 'https:';
+	var url = protocol + '//picasaweb.google.com/data/feed/api/user/' + username + '/album/' + album + '?kind=photo&alt=json';
 
 
+
+//call to Picasa
 $.ajax({
 	url: url,
 	type: 'get',
@@ -28,16 +45,19 @@ $.ajax({
 			var pic = result_array[i].content.src;
 			pic_array.push(pic);
 
-			// //img tag plus lightbox support
-			//enable this for floated boxes to fill div
-			// var html = '<a data-lightbox="' + i + '" href="' + pic + '"><img src="' + pic + '" alt="picasa image"/></a>'
-			// $('.picasagallery').append(html);
 		}// for
+
+
+
 
 		var count = 0;
 		var img = pic_array;
-		var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="pic" src="' + img[count] + '" alt="picasa image"/></a>'
+		var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="picasa-pic" src="' + img[count] + '" alt="picasa image"/></a>'
+		
+		//load initial image
 		$('.picasagallery').append(html);
+
+
 
 		//next button click handler
 		$(document).on('click', '#nextbtn', function(e){
@@ -49,17 +69,26 @@ $.ajax({
 			prev_img();
 		});
 
+
+
+
+
+
 		function prev_img(){
 			count--;
-			if(count <= 0){
-				count = pic_array.length;
+			if(count < 0){
+				count = pic_array.length - 1;
 			}
 
 			//img tag plus lightbox support
 			$('.picasagallery').empty();
-			var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="pic" src="' + img[count] + '" alt="picasa image"/></a>'
+			var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="picasa-pic" src="' + img[count] + '" alt="picasa image"/></a>'
 			$('.picasagallery').append(html);
 		};
+
+
+
+
 
 
 		function next_img(){
@@ -70,7 +99,7 @@ $.ajax({
 
 			//img tag plus lightbox support
 			$('.picasagallery').empty();
-			var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="pic" src="' + img[count] + '" alt="picasa image"/></a>'
+			var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="picasa-pic" src="' + img[count] + '" alt="picasa image"/></a>'
 			$('.picasagallery').append(html);
 		};
 
@@ -81,7 +110,7 @@ $.ajax({
 		looper();
 
 		function looper(){
-			setTimeout(nextLoopImg,3000);
+			setTimeout(nextLoopImg, speed);
 		};
 
 
@@ -93,15 +122,23 @@ $.ajax({
 
 			//img tag plus lightbox support
 			$('.picasagallery').empty();
-			var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="pic" src="' + img[count] + '" alt="picasa image"/></a>'
+			var html = '<a href="' + img[count] + '" data-lightbox="' + img[count] + '"><img class="picasa-pic" src="' + img[count] + '" alt="picasa image"/></a>'
 			$('.picasagallery').append(html);
 
 			looper();// reruns settimeout
 		};
 		
 	}// success
-});
+});//ajax
+
+};//$.fn.
 
 
+$.fn.picasa_slideshow.defaults = {
+	username: 'lizadivacatana',
+	album: 'WebsiteAlbum',
+	speed: '4000'
+};
 
-});//jquery namespace
+
+})(jQuery);//jquery namespace
