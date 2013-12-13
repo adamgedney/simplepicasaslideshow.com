@@ -3,7 +3,7 @@
 <head>
 	<title>Simple Picasa Slideshow  |  JQuery plugin</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
 
 	<link type="text/plain" rel="author" href="/humans.txt" />
 	<link rel="shortcut icon" href="http://adamshields.com/favicon.ico" />
@@ -52,7 +52,7 @@
 							</div><!-- /.picasagallery-->
 
 					</div><!-- /.picasa-wrapper-->
-
+					<h3><span class="medium orange">...but it's really neat</span></h3>
 			</div><!-- /.page-->
 
 			<div class="page instructions">
@@ -65,11 +65,13 @@
 					<p><span class="bold">Extract the .zip</span>. You'll find the full example files that generate this webpage in there.
 					We're only going to take certain parts. What you will end up needing from the css folder is the <em>picasa-slideshow.css</em> & <em>lightbox.css</em> files. From the js folder you'll need the <em>jquery-1.10.2.min.js</em>, <em>jquery.simple.picasa.slideshow.js</em> & the <em>lightbox-2.6.min.js</em> files. You can use the <em>jquery.simple.picasa.slideshow-min.js</em> file if you want the minified version of the plugin (recommended). That's it!</p>
 
-					<p><span class="bold">Place the .css files in your css folder</span> and link them up in the <head> section of your HTML page, like so:</p>
+					<p><span class="bold">Place the .css files in your css folder</span> and link them up in the "head" section of your HTML page, like so:</p>
 
 					<xmp>
-						<link rel="stylesheet" href="css/picasa-slideshow.css" />
-						<link rel="stylesheet" href="css/lightbox.css" />
+						<head>
+							<link rel="stylesheet" href="css/picasa-slideshow.css" />
+							<link rel="stylesheet" href="css/lightbox.css" />
+						</head>
 					</xmp>
 
 					<p>It's usually a good idea to add these links after you've already linked your main stylesheet. Lightbox can get buggy if you accidentally override one of its styles with one of your own.</p>
@@ -108,13 +110,13 @@
 					<p>Now that we have our HTML in order, let's add the magic javascript stuff that'll make it all happen. <span class="bold">After that HTML code we just put in our page, paste this script:</span></p>
 
 					<xmp>
-						<script>
-						   $('.picasagallery').picasa_slideshow({
-						     username: 'calaquendidolls',
-						     album: 'PicasaKittensDayitaAugustus',
-						     speed: '5000'
-						   });
-						</script>
+					<script>
+					   $('.picasagallery').picasa_slideshow({
+					     username: 'calaquendidolls',
+					     album: 'PicasaKittensDayitaAugustus',
+					     speed: '5000'
+					   });
+					</script>
 					</xmp>
 
 					<p>What this does is create a new instance of the plugin. If you know what you're doing, feel free to ditch the script tags and move that code over to your <em>main.js</em> or whatever file. You know how it works. If you aren't so sure what's happening, just copy and paste that script exactly as it is.</p>
