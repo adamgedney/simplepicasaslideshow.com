@@ -70,3 +70,9 @@ Feel free to check out my portfolio and my other projects at: http://adamgedney.
 Cheers!
 
 Adam
+
+
+
+____________________________________________________________
+
+This plugin is protected under the MIT license, so enjoy! :)
