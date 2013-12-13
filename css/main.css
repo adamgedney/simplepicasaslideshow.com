@@ -84,6 +84,8 @@ a:hover {
   opacity: .6; }
 
 xmp {
+  overflow: scroll;
+  text-align: left;
   color: #252525;
   font-size: 2.1em; }
 
@@ -179,8 +181,6 @@ img {
     padding: 108px 0 36px; }
   .instructions p {
     color: #252525; }
-  .instructions xmp {
-    max-width: 600px; }
 
 .page-inner {
   max-width: 960px;

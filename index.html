@@ -67,22 +67,22 @@
 
 					<p><span class="bold">Place the .css files in your css folder</span> and link them up in the "head" section of your HTML page, like so:</p>
 
-					<xmp>
-						<head>
-							<link rel="stylesheet" href="css/picasa-slideshow.css" />
-							<link rel="stylesheet" href="css/lightbox.css" />
-						</head>
-					</xmp>
+<xmp>
+<head>
+    <link rel="stylesheet" href="css/picasa-slideshow.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+</head>
+</xmp>
 
 					<p>It's usually a good idea to add these links after you've already linked your main stylesheet. Lightbox can get buggy if you accidentally override one of its styles with one of your own.</p>
 
 					<p>Next, you'll want to <span class="bold">link the .js files at the bottom of your HTML page,</span> before your own <em>main.js</em> or whatever file. After your footer and before the closing </body> tag, add these lines:</p>
 
-					<xmp>
-						<script src="js/jquery-1.10.2.min.js"></script>
-						<script src="js/lightbox-2.6.min.js"></script>
-						<script src="js/jquery.simple.picasa.slideshow.js"></script>
-					</xmp>
+<xmp>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/lightbox-2.6.min.js"></script>
+<script src="js/jquery.simple.picasa.slideshow.js"></script>
+</xmp>
 
 					<p>This adds jQuery to your site, the Lightbox plugin, and the Simple Picasa Slideshow plugin. Simple so far? If you know what you're doing, it's a good idea to include these .js files in your <em>main.js</em> or whatever file. Use CodeKit or a Javascript require plugin or something. The less HTTP requests you make to a server, the faster your site will be. These little guys won't noticeably slow you down though. I'm addicted to speed, that's all.</p>
 
@@ -90,34 +90,34 @@
 
 					<p>Once all this is said and done, we're ready to add some HTML. Just <span class="bold">copy and paste this into your HTML page</span> where you'd like the slideshow:</p>
 
-					<xmp>
-						<!-- slideshow wrapper -->
-						<div class='picasa-wrapper'>
+<xmp>
+<!-- slideshow wrapper -->
+<div class='picasa-wrapper'>
 
-						    <img id="prevbtn" src="images/prev.png" alt="previous arrow" width="50" height="45"/>
+    <img id="prevbtn" src="images/prev.png" alt="previous arrow" width="50" height="45"/>
 
-						    <img id="nextbtn" src="images/next.png" alt="next arrow" width="50" height="45"/>
+    <img id="nextbtn" src="images/next.png" alt="next arrow" width="50" height="45"/>
 
-						    <!-- slideshow inserted via JS into this div -->
-						    <div class='picasagallery'>
-						    </div><!-- /.picasagallery-->
+    <!-- slideshow inserted via JS into this div -->
+    <div class='picasagallery'>
+    </div><!-- /.picasagallery-->
 
-						</div><!-- /.picasa-wrapper-->
-					</xmp>
+</div><!-- /.picasa-wrapper-->
+</xmp>
 
 					<p>Here's what we've got. You've got a wrapper that contains the previous and next buttons, then a .picasagallery div that holds the images. That's all folks. If you need to make adjustments to how the .picasa-wrapper container sits on your page, just open up the picasa-slideshow.css file and fiddle around with that .picasa-wrapper class a bit. I have faith in you!</p>
 
 					<p>Now that we have our HTML in order, let's add the magic javascript stuff that'll make it all happen. <span class="bold">After that HTML code we just put in our page, paste this script:</span></p>
 
-					<xmp>
-					<script>
-					   $('.picasagallery').picasa_slideshow({
-					     username: 'calaquendidolls',
-					     album: 'PicasaKittensDayitaAugustus',
-					     speed: '5000'
-					   });
-					</script>
-					</xmp>
+<xmp>
+<script>
+   $('.picasagallery').picasa_slideshow({
+     username: 'calaquendidolls',
+     album: 'PicasaKittensDayitaAugustus',
+     speed: '5000'
+   });
+</script>
+</xmp>
 
 					<p>What this does is create a new instance of the plugin. If you know what you're doing, feel free to ditch the script tags and move that code over to your <em>main.js</em> or whatever file. You know how it works. If you aren't so sure what's happening, just copy and paste that script exactly as it is.</p>
 
