@@ -1,13 +1,12 @@
 
 
 
-
 Download the .zip file through the download button above, or grab a copy of it off github.com.
 
 Extract the .zip. You'll find the full example files that generate this webpage in there.
 We're only going to take certain parts. What you will end up needing from the css folder is the picasa-slideshow.css & lightbox.css files. From the js folder you'll need the jquery-1.10.2.min.js, jquery.simple.picasa.slideshow.js & the lightbox-2.6.min.js files. You can use the jquery.simple.picasa.slideshow-min.js file if you want the minified version of the plugin (recommended). That's it!
 
-Place the .css files in your css folder and link them up in the <head> section of your HTML page, like so:
+Place the .css files in your css folder and link them up in the "head" section of your HTML page, like so:
 
 	<link rel="stylesheet" href="css/picasa-slideshow.css" />
 	<link rel="stylesheet" href="css/lightbox.css" />
