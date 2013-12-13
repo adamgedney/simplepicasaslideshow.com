@@ -14,6 +14,7 @@ Il███████████████████].   /▌
 /*----SASS Color Palette----*/
 
 $white: #fefefe;
+$light-grey: #a5a5a5;
 $dark-grey: #252525;
 
 $red: #F14C4A;
@@ -31,7 +32,7 @@ v2.0 | 20110126
 License: none (public domain)
 */
 
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, cite, code,del, em, img, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, cite, code,del, img, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 margin: 0;
 padding: 0;
@@ -111,8 +112,17 @@ text-decoration: none;
 color: $blue;
 }
 
+a:visited{
+	outline: none;
+}
+
 a:hover{
 	opacity: .6;
+}
+
+xmp{
+	color: $dark-grey;
+	font-size: 2.1em;
 }
 
 img{
@@ -120,8 +130,18 @@ img{
 }
 
 .small{
-	font-size: .4em;
+	font-size: .5em;
 }
+
+.medium{
+	font-size: .6em;
+}
+
+.bold{
+	font-weight: 700;
+}
+
+
 
 .center{
 	text-align: center;
@@ -198,6 +218,7 @@ img{
 
 .showcase{
 	background: $dark-grey;
+	padding-bottom: 72px;
 
 	-webkit-box-shadow: 1px -5px 5px 0px rgba(37,37,37,0.57);
 	   -moz-box-shadow: 1px -5px 5px 0px rgba(37,37,37,0.57);
@@ -205,20 +226,34 @@ img{
 
 	h2{
 		text-align: center;
-		padding: 36px 0;
+		padding: 108px 0 36px;
 	}
 }
 
 .instructions{
 	background: $white;
+	padding-bottom: 72px;
 
 	h2{
 		color: $dark-grey;
 		text-align: center;
-		padding: 36px 0;
+		padding: 108px 0 36px;
+	}
+
+	p{
+		color: $dark-grey;
+	}
+
+	xmp{
+		max-width: 600px;
+		margin-left: -450px;
 	}
 }
 
+.page-inner{
+	max-width: 960px;
+	margin: 0 auto;
+}
 
 
 
