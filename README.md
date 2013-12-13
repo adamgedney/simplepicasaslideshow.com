@@ -56,7 +56,7 @@ Now that we have our HTML in order, let's add the magic javascript stuff that'll
 	    });
 	</script>
 
-What this does is create a new instance of the plugin. If you know what you're doing, feel free to ditch the <script> tags and move that code over to your main.js or whatever file. You know how it works. If you aren't so sure what's happening, just copy and paste that script exactly as it is.
+What this does is create a new instance of the plugin. If you know what you're doing, feel free to ditch the "script" tags and move that code over to your main.js or whatever file. You know how it works. If you aren't so sure what's happening, just copy and paste that script exactly as it is.
 
 Now for the fun part! See where it says "username" and "album"? That's where you place the username of the person hosting the album, and the album name for the album you'd like to display. Here's a tip: if you're having trouble getting this part to work, the username is either the first part of the users gmail address ("me" from "me@gmail.com") or you can use their user ID that you'll see up in the url in the address bar. The album name can be found on the site or, again, in the url when you're on picasa's web albums page. Here's a tip too: the web album you're trying to display has to be made public. In the sharing settings, when you go to actually share the album, it will ask who you'd like to share it with. When you click to start typing a username or whatever, you'll see an option appear for "Public". Yes, THAT'S how you make an album public (at least at the time of this writing). Kind of silly, if you ask me.
 
